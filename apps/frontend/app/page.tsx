@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { Activity, Shield, Clock, Bell, Server, ArrowRight, CheckCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 function App() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <main>
@@ -17,7 +20,7 @@ function App() {
               Real-time monitoring, instant alerts, and comprehensive insights for your web applications and APIs.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors">
+              <button onClick={() => router.push('/dashboard')} className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors">
                 <span>Start Monitoring</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
